@@ -19,5 +19,13 @@ const updateScreen = (number) => {
     calculatorScreen.value = number
 };
 
-
+//Menyimpan angka-angka dan operator untuk melakukan kalkulasi.
 //Untuk kalkulasi: 2 angka dan 1 operator
+
+let prevNumber = "";
+let calculationOperator = "";
+let curretNumber = "0"
+
+const inputNumber = (number) => {
+    curretNumber  = number;
+}
