@@ -57,8 +57,12 @@ operators.forEach((operator) => {
 // 2. Berikan operator ke calculationOperator sebagai suatu argument.
 // 3. Kosongkan currentNumber.
 
+//perbarui variable prevNumber hanya saat tombol operator diklik terlebih dahulu.
+
 const inputOperator = (operator) => {
+    if (calculationOperator === "") {
     prevNumber = currentNumber;
+    }
     calculationOperator = operator;
     currentNumber = "";
 }
@@ -83,22 +87,22 @@ const calculate = () => {
     switch(calculationOperator) {
 
         case "+":
-            result = parseInt(prevNumber) + parseInt(currentNumber);
+            result = parseFloat(prevNumber) + parseFloat(currentNumber);
             console.log("tambah")
             break;
 
         case "-":
-            result = parseInt(prevNumber) - parseInt(currentNumber);
+            result = parseFloat(prevNumber) - parseFloat(currentNumber);
             console.log("kurang")
             break;
 
         case "*":
-            result =  parseInt(prevNumber) * parseInt(currentNumber);
+            result =  parseFloat(prevNumber) * parseFloat(currentNumber);
             console.log("kali")
             break;
 
         case "/":
-            result = parseInt(prevNumber) / parseInt(currentNumber);
+            result = parseFloat(prevNumber) / parseFloat(currentNumber);
             console.log("bagi")
             break;
 
@@ -115,5 +119,28 @@ const calculate = () => {
 const clearBtn = document.querySelector(".all-clear");
 
 clearBtn.addEventListener("click", () => {
-    console.log("AC button is pressed")
+    clearAll();
+    updateScreen(currentNumber);
+    //console.log("AC button is pressed")
 })
+
+const clearAll = () => {
+    prevNumber = "";
+    calculationOperator = "";
+    currentNumber = "0";
+}
+
+const decimal = document.querySelector(".decimal");
+
+inputDecimal = (dot) => {
+    if (currentNumber.includes(".")) {
+        return;
+    }
+    currentNumber += dot;
+}
+
+decimal.addEventListener("click", (event) => {
+    inputDecimal(event.target.value);
+    updateScreen(currentNumber);
+})
+
