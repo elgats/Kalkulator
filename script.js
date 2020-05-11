@@ -10,7 +10,8 @@ const numbers = document.querySelectorAll(".number");
 numbers.forEach((number) => {
     number.addEventListener("click", (event) => {
         inputNumber(event.target.value);
-        updateScreen(currentNumber)
+        updateScreen(currentNumber);
+        console.log("angka")
     })
 })
 
@@ -34,10 +35,10 @@ const inputNumber = (number) => {
     //supaya tidak bisa diawali dengan 0
     if (currentNumber === "0") {
         currentNumber = number;
-        console.log(currentNumber);
+        //console.log(currentNumber);
     } else {
         currentNumber += number;
-        console.log(currentNumber);
+        //console.log(currentNumber);
     }
 
 }
@@ -59,5 +60,60 @@ operators.forEach((operator) => {
 const inputOperator = (operator) => {
     prevNumber = currentNumber;
     calculationOperator = operator;
-    currentNumver = "";
+    currentNumber = "";
 }
+
+//kalkulasi
+
+//1. ambil elemen =
+const equalSign = document.querySelector('.equal-sign');
+
+equalSign.addEventListener("click", () => {
+    calculate();
+    updateScreen(currentNumber);
+    console.log("sama dengan")
+})
+
+//definisi function calculation
+
+const calculate = () => {
+
+    let result = "";
+
+    switch(calculationOperator) {
+
+        case "+":
+            result = parseInt(prevNumber) + parseInt(currentNumber);
+            console.log("tambah")
+            break;
+
+        case "-":
+            result = parseInt(prevNumber) - parseInt(currentNumber);
+            console.log("kurang")
+            break;
+
+        case "*":
+            result =  parseInt(prevNumber) * parseInt(currentNumber);
+            console.log("kali")
+            break;
+
+        case "/":
+            result = parseInt(prevNumber) / parseInt(currentNumber);
+            console.log("bagi")
+            break;
+
+        default:
+            return;
+    }
+
+    currentNumber = result; //supaya tampil di layar
+    calculationOperator = "";  
+}
+
+//Tombol AC
+
+const clearBtn = document.querySelector(".all-clear");
+
+clearBtn.addEventListener("click", () => {
+    console.log("AC button is pressed")
+})
