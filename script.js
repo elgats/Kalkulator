@@ -9,7 +9,8 @@ const numbers = document.querySelectorAll(".number");
 
 numbers.forEach((number) => {
     number.addEventListener("click", (event) => {
-        updateScreen(event.target.value)
+        inputNumber(event.target.value);
+        updateScreen(currentNumber)
     })
 })
 
@@ -24,8 +25,39 @@ const updateScreen = (number) => {
 
 let prevNumber = "";
 let calculationOperator = "";
-let curretNumber = "0"
+let currentNumber = "0"
+
+//Didalam function “inputNumber”, berikan angka yang di klik ke currentNumber. 
 
 const inputNumber = (number) => {
-    curretNumber  = number;
+   //currentNumber += number; //cara mengaktifkan peng-input-an lebih dari 2 digit angkaß 
+    //supaya tidak bisa diawali dengan 0
+    if (currentNumber === "0") {
+        currentNumber = number;
+        console.log(currentNumber);
+    } else {
+        currentNumber += number;
+        console.log(currentNumber);
+    }
+
+}
+
+//add event ke operator
+
+const operators = document.querySelectorAll(".operator");
+
+operators.forEach((operator) => {
+    operator.addEventListener("click", (event) => {
+        inputOperator(event.target.value);
+    })
+})
+
+// function inputOperator akan 1. Memberikan nilai yang tersimpan di currentNumber ke prevNumber.
+// 2. Berikan operator ke calculationOperator sebagai suatu argument.
+// 3. Kosongkan currentNumber.
+
+const inputOperator = (operator) => {
+    prevNumber = currentNumber;
+    calculationOperator = operator;
+    currentNumver = "";
 }
