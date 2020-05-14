@@ -67,6 +67,16 @@ const inputOperator = (operator) => {
     currentNumber = "";
 }
 
+//persentase
+
+const percentage = document.querySelector('.percentage');
+
+percentage.addEventListener('click', () => {
+    calculate();
+    updateScreen(currentNumber);
+    inputOperator(event.target.value);
+})
+
 //kalkulasi
 
 //1. ambil elemen =
@@ -104,6 +114,11 @@ const calculate = () => {
         case "/":
             result = parseFloat(prevNumber) / parseFloat(currentNumber);
             console.log("bagi")
+            break;
+
+        case "%":
+            result = parseFloat(prevNumber) / 100;
+            console.log("persen")
             break;
 
         default:
