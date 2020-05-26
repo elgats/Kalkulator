@@ -3,6 +3,14 @@
 // 2. Tambah click event & jalankan function "updateScreen" saat tombol diklik.
 // 3. Perbarui atribut nilai dari element <input> di dalam calculator-screen dengan function "updateScreen".
 
+//audio 
+setTimeout(function(){
+  document.getElementById("sfx").volume = 0.3;
+  document.getElementById("sfx").play();
+  console.log('your audio is started just now');
+}, 2600)
+
+
 const pressed = () => {
     document.getElementById("press").volume = 0.1;
     document.getElementById("press").play();
@@ -168,5 +176,21 @@ decimal.addEventListener("click", (event) => {
     pressed();
 })
 
+//efek flip
 
+const calculatorPage = document.querySelector('.calculator');
+const creditPage = document.querySelector('.credit');
+const backBtn = document.querySelector('#back');
+const creditBtn = document.querySelector('#credit-btn');
 
+creditBtn.addEventListener('click', function() {
+    creditPage.style.transform = "perspective( 2000px ) rotateY( 0deg )";
+    calculatorPage.style.transform = "perspective( 2000px ) rotateY( -180deg )";
+    console.log('flip');
+});
+
+backBtn.addEventListener('click', function() {
+    calculatorPage.style.transform = "perspective( 2000px ) rotateY( 0deg )";
+    creditPage.style.transform = "perspective( 2000px ) rotateY( 180deg )";
+    console.log('flip');
+});

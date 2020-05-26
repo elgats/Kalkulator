@@ -17,6 +17,10 @@ header h1 {
 /* calculator */
 
 .calculator {
+     /* flipping */
+    transform: perspective( 2000px ) rotateY( 0deg );
+    transition: all .3s linear;
+
     background-color: #181818;
     display: flex;
     flex-direction: column;
@@ -31,6 +35,8 @@ header h1 {
     animation: show-up;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
 }
 
 /* screen */
@@ -115,6 +121,78 @@ footer h3 {
     justify-content: center;
     grid-column-gap: 10px;
 }
+
+footer #credit-btn {
+    font-size: 1.25em;;
+    height: 40px;
+    width: 100px;
+    box-shadow: none;
+    margin-top: 15px;
+}
+
+/* Credit page */
+
+.credit {
+    margin: 0 auto;
+    transform: perspective( 2000px ) rotateY( 180deg );
+    transition: all .3s linear;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 615px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    background-color: #181818;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 30px 3px  black;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+}
+
+.credit ul {
+    margin-left: 5%;
+}
+
+.credit li {
+    text-align: left;
+}
+
+.credit h3 {
+    font-size: 1.75em;
+}
+
+.credit a {
+    color: white;
+    text-decoration: none;
+}
+
+.credit span {
+    font-size: 35px;
+}
+
+.credit button {
+    margin: 0 auto;
+    font-size: 1em;
+    height: auto;
+    width: 25%;
+    box-shadow: none;
+}
+
+
+.credit i {
+    margin: 5px;
+}
+
+.credit p {
+    font-size: 1em;
+    transition: 0.2s all linear 0s;
+}
+
 
 /* animation */
 

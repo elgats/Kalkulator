@@ -8,20 +8,36 @@
     <link rel="stylesheet" href="https://use.typekit.net/iru1ffd.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c12de2f770.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         setTimeout(function(){
             document.getElementById("sfx").volume = 0.2;
           document.getElementById("sfx").play();
           console.log('your audio is started just now');
         }, 2600)
-    </script>
+    </script> -->
   </head>
 </head>
 <body>
+
+    <!-- <iframe src="https://www.dropbox.com/s/gnhnxuumoqzhofk/silence.mp3?dl=0" allow="autoplay" id="audio" style="display: none"></iframe> -->
+
     <header>
         <h1>Neumorphism Calculator</h1>
     </header>
     <main>
+
+        <div class="credit">
+            <h3>Credits</h3>
+            <span class="fas fa-music"></span>
+            <p>Sound effects included on this page:</p>
+            <ul>
+                <li>Calculator set down sound from <a href="https://www.zapsplat.com">Zapsplat</a></li>
+                <li>Button pressed sound from Sebastian on <a href="http://soundbible.com">Sounbible</a></li>
+            </ul>
+            <p>Thank you all!</p>
+            <button id="back">back to <i class="fas fa-calculator"></i></button>
+        </div>
+
     <div class="calculator">
         <input type="text" class="calculator-screen" value="0" disabled />
         <div class= "calculator-keys">
@@ -69,6 +85,7 @@
             <a href="https://twitter.com/elgats" class="btn behance"><span class="fab fa-twitter"></span></a>
             <a href="https://www.instagram.com/elgats.design/" class="btn instagram"><span class="fab fa-instagram"></span></a>
         </div>
+        <button id="credit-btn">credits</button>
     </footer>
     <script type="text/javascript" src="script.js"></script>
 </body>
