@@ -3,6 +3,10 @@
 // 2. Tambah click event & jalankan function "updateScreen" saat tombol diklik.
 // 3. Perbarui atribut nilai dari element <input> di dalam calculator-screen dengan function "updateScreen".
 
+const pressed = () => {
+    document.getElementById("press").volume = 0.1;
+    document.getElementById("press").play();
+}
 
 const numbers = document.querySelectorAll(".number");
 //console.log(numbers);
@@ -11,6 +15,7 @@ numbers.forEach((number) => {
     number.addEventListener("click", (event) => {
         inputNumber(event.target.value);
         updateScreen(currentNumber);
+        pressed();
         console.log("angka")
     })
 })
@@ -50,6 +55,7 @@ const operators = document.querySelectorAll(".operator");
 operators.forEach((operator) => {
     operator.addEventListener("click", (event) => {
         inputOperator(event.target.value);
+        pressed();
     })
 })
 
@@ -85,6 +91,7 @@ const equalSign = document.querySelector('.equal-sign');
 equalSign.addEventListener("click", () => {
     calculate();
     updateScreen(currentNumber);
+    pressed();
     console.log("sama dengan")
 })
 
@@ -136,6 +143,7 @@ const clearBtn = document.querySelector(".all-clear");
 clearBtn.addEventListener("click", () => {
     clearAll();
     updateScreen(currentNumber);
+    pressed();
     //console.log("AC button is pressed")
 })
 
@@ -157,5 +165,8 @@ inputDecimal = (dot) => {
 decimal.addEventListener("click", (event) => {
     inputDecimal(event.target.value);
     updateScreen(currentNumber);
+    pressed();
 })
+
+
 

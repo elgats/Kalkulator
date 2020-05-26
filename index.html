@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://use.typekit.net/iru1ffd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c12de2f770.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        setTimeout(function(){
+            document.getElementById("sfx").volume = 0.2;
+          document.getElementById("sfx").play();
+          console.log('your audio is started just now');
+        }, 2600)
+    </script>
+  </head>
 </head>
 <body>
     <header>
@@ -14,41 +25,51 @@
     <div class="calculator">
         <input type="text" class="calculator-screen" value="0" disabled />
         <div class= "calculator-keys">
-            <!-- <div class= "row"> -->
+
                 <button class="all-clear">AC</button>
                 <button class="operator percentage" value="%">%</button>
                 <button class="operator" value="/">&divide;</button>
-            <!-- </div> -->
 
-            <!-- <div class= "row"> -->
                 <button class="number" value="7">7</button>
                 <button class="number" value="8">8</button>
                 <button class="number" value="9">9</button>
                 <button class="operator" value="*">&times;</button>
-            <!-- </div> -->
 
-            <!-- <div class= "row"> -->
                 <button class="number" value="4">4</button>
                 <button class="number" value="5">5</button>
                 <button class="number" value="6">6</button>
                 <button class="operator" value="-">-</button>
-            <!-- </div> -->
 
-            <!-- <div class= "row"> -->
                 <button class="number" value="1">1</button>
                 <button class="number" value="2">2</button>
                 <button class="number" value="3">3</button>
                 <button class="operator" value="+">+</button>
-            <!-- </div> -->
 
-            <!-- <div class= "row"> -->
                 <button class="number zero-btn" value="0">0</button>
                 <button class="decimal" value=".">.</button>
                 <button class="equal-sign">=</button>
-            <!-- </div> -->
         </div>
     </div>
+
+    <audio id="sfx">
+        <source src="assets/sfx-setdown.wav" type="audio/wav">
+    </audio>
+    <audio id="press">
+        <source src="assets/Click2-Sebastian-759472264.wav" onplay="numbers.forEach((number)">
+    </audio>
+
     </main>
+
+    <footer>
+        <h2>Created by: Elga Theresia</h2>
+        <h3>Find me on:</h3>
+        <div class="icons">
+            <a href="elgatheresia.com" class="btn web"><span class="fas fa-laptop"></span></a>
+            <a href="behance.net/elgatheresia" class="btn behance"><span class="fab fa-behance"></span></a>
+            <a href="https://twitter.com/elgats" class="btn behance"><span class="fab fa-twitter"></span></a>
+            <a href="https://www.instagram.com/elgats.design/" class="btn instagram"><span class="fab fa-instagram"></span></a>
+        </div>
+    </footer>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
