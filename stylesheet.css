@@ -117,7 +117,7 @@ footer h3 {
 .icons {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 35px);
+    grid-template-columns: repeat(5, 35px);
     justify-content: center;
     grid-column-gap: 10px;
 }
