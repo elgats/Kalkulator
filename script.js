@@ -1,7 +1,3 @@
-// Steps:
-// 1. Ambil element button dengan class number.
-// 2. Tambah click event & jalankan function "updateScreen" saat tombol diklik.
-// 3. Perbarui atribut nilai dari element <input> di dalam calculator-screen dengan function "updateScreen".
 
 //audio 
 setTimeout(function(){
@@ -15,6 +11,11 @@ const pressed = () => {
     document.getElementById("press").volume = 0.1;
     document.getElementById("press").play();
 }
+
+// Steps:
+// 1. Ambil element button dengan class number.
+// 2. Tambah click event & jalankan function "updateScreen" saat tombol diklik.
+// 3. Perbarui atribut nilai dari element <input> di dalam calculator-screen dengan function "updateScreen".
 
 const numbers = document.querySelectorAll(".number");
 //console.log(numbers);
