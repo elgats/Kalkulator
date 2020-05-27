@@ -13,9 +13,9 @@ const pressed = () => {
 }
 
 // Steps:
-// 1. Ambil element button dengan class number.
-// 2. Tambah click event & jalankan function "updateScreen" saat tombol diklik.
-// 3. Perbarui atribut nilai dari element <input> di dalam calculator-screen dengan function "updateScreen".
+// 1. Get element (buttons) wuth class "number".
+// 2. Add click event & run  "updateScreen" function when a button is clicked
+// 3. Update value atribute of <input> element in calculator-screen with "updateScreen" function.
 
 const numbers = document.querySelectorAll(".number");
 //console.log(numbers);
@@ -35,18 +35,18 @@ const updateScreen = (number) => {
     calculatorScreen.value = number
 };
 
-//Menyimpan angka-angka dan operator untuk melakukan kalkulasi.
-//Untuk kalkulasi: 2 angka dan 1 operator
+//Store number and operators to do calculations.
+//Calculating: 2 numbers dan 1 operator
 
 let prevNumber = "";
 let calculationOperator = "";
 let currentNumber = "0"
 
-//Didalam function “inputNumber”, berikan angka yang di klik ke currentNumber. 
+//In function “inputNumber”, pass the number clicked to currentNumber. 
 
 const inputNumber = (number) => {
-   //currentNumber += number; //cara mengaktifkan peng-input-an lebih dari 2 digit angkaß 
-    //supaya tidak bisa diawali dengan 0
+   //currentNumber += number; //to allow more than 2 digit input
+    //to prevent the number from being started with 0
     if (currentNumber === "0") {
         currentNumber = number;
         //console.log(currentNumber);
@@ -57,7 +57,7 @@ const inputNumber = (number) => {
 
 }
 
-//add event ke operator
+//add event to operator
 
 const operators = document.querySelectorAll(".operator");
 
@@ -68,11 +68,11 @@ operators.forEach((operator) => {
     })
 })
 
-// function inputOperator akan 1. Memberikan nilai yang tersimpan di currentNumber ke prevNumber.
-// 2. Berikan operator ke calculationOperator sebagai suatu argument.
-// 3. Kosongkan currentNumber.
+// inputOperator function will 1. Pass the value in currentNumber to prevNumber.
+// 2. Pass an operator to calculationOperator as an argument.
+// 3. empty currentNumber.
 
-//perbarui variable prevNumber hanya saat tombol operator diklik terlebih dahulu.
+//Update prevNumber variable only when operator button is clicked first.
 
 const inputOperator = (operator) => {
     if (calculationOperator === "") {
@@ -82,7 +82,7 @@ const inputOperator = (operator) => {
     currentNumber = "";
 }
 
-//persentase
+//percentage
 
 const percentage = document.querySelector('.percentage');
 
@@ -92,9 +92,9 @@ percentage.addEventListener('click', () => {
     inputOperator(event.target.value);
 })
 
-//kalkulasi
+//calculation
 
-//1. ambil elemen =
+//1. get element =
 const equalSign = document.querySelector('.equal-sign');
 
 equalSign.addEventListener("click", () => {
@@ -104,7 +104,7 @@ equalSign.addEventListener("click", () => {
     console.log("sama dengan")
 })
 
-//definisi function calculation
+//definition calculation function
 
 const calculate = () => {
 
@@ -141,7 +141,7 @@ const calculate = () => {
             return;
     }
 
-    currentNumber = result; //supaya tampil di layar
+    currentNumber = result; //to display it on screen
     calculationOperator = "";  
 }
 
@@ -177,7 +177,7 @@ decimal.addEventListener("click", (event) => {
     pressed();
 })
 
-//efek flip
+//flip effect
 
 const calculatorPage = document.querySelector('.calculator');
 const creditPage = document.querySelector('.credit');
